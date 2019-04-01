@@ -33,7 +33,7 @@ while (teacher_id+1 <= NB_TEACHERS): # Loop until all NB_TEACHERS predictions ar
 			chunk = client_socket.recv(CHUNK_SIZE)
 			data += chunk
 
-		filename = "predictions_teacher_" + str(teacher_id)
+		filename = "predictions_teacher_" + str(teacher_id) + ".npy"
 
 		with open(filename, "wb") as f:
 			f.write(data)
