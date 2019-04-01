@@ -42,9 +42,6 @@ while (teacher_id+1 <= NB_TEACHERS): # Loop until all NB_TEACHERS predictions ar
 
 		teacher_id += 1
 
-		print("==== Received " + str(len(teachers_received)) + "/" + str(NB_TEACHERS) + " Teacher Predictions ====\n")
-
-
 	else:
 
 		print("Already received data from Teacher @ " + str(addr) + "\n")
