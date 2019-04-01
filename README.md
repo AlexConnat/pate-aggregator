@@ -9,6 +9,7 @@ sudo apt install -y python python-pip
 git clone https://github.com/AlexConnat/pate-student
 cd pate-student/
 pip --no-cache-dir install -r requirements.txt
-python teachers_predictions/receive_predictions.py
+cd teachers_predictions/
+sudo python receive_predictions.py
 ```
 
