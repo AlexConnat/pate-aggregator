@@ -39,15 +39,13 @@ while (teacher_id+1 <= NB_TEACHERS): # Loop until all NB_TEACHERS predictions ar
 			f.write(data)
 	
 		print("Data saved under '" + filename + "'\n")
+		print("==== Received " + str(len(teachers_received)) + "/" + str(NB_TEACHERS) + " Teacher Predictions ====\n")
 
 		teacher_id += 1
 
 	else:
 
 		print("Already received data from Teacher @ " + str(addr) + "\n")
-
-
-print("==== Received " + str(len(teachers_received)) + "/" + str(NB_TEACHERS) + " Teacher Predictions ====\n")
 
 print("[*] Start the aggregator\n")
 
