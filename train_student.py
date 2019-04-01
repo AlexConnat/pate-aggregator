@@ -74,30 +74,14 @@ def ensemble_preds(dataset, nb_teachers, stdnt_data):
   # Get predictions from each teacher
   for teacher_id in xrange(nb_teachers):
 
-    # Compute path of checkpoint file for teacher model with ID teacher_id
-
-    # if FLAGS.deeper:
-    #   ckpt_path = FLAGS.teachers_dir + '/' + str(dataset) + '_' + str(nb_teachers) + '_teachers_' + str(teacher_id) + '_deep.ckpt-' + str(FLAGS.teachers_max_steps - 1) #NOLINT(long-line)
-    # else:
-    #   ckpt_path = FLAGS.teachers_dir + '/' + str(dataset) + '_' + str(nb_teachers) + '_teachers_' + str(teacher_id) + '.ckpt-' + str(FLAGS.teachers_max_steps - 1)  # NOLINT(long-line)
-    # print("Teacher " + str(teacher_id) + " checkpoint path:")
-    # print(ckpt_path)
-
-    # Get predictions on our training data and store in result array
-    # result[teacher_id] = deep_cnn.softmax_preds(stdnt_data, ckpt_path)
-
-    # This can take a while when there are a lot of teachers so output status
-    # print("Computed Teacher " + str(teacher_id) + " softmax predictions")
-
-
     # Open the prediction file for this teacher:
-    preds = np.load('TEACHERS/Teacher' + str(teacher_id) + '/' + 'checkpoints/' + 'predictions_teacher' + str(teacher_id) + '.npy')
+    preds = np.load("teachers_predictions/predictions_teacher_" + str(teacher_id) + ".npy")
 
     # This can take a while when there are a lot of teachers so output status
     print("Computed Teacher " + str(teacher_id) + " softmax predictions")
 
-    print(len(preds))
-    print(preds[0]) # 1000 predictions... First one = 99.99% it's a "7"   [2.0517505e-12, 1.0282039e-12, 1.4764162e-10, 9.4572317e-07, 3.6487339e-13, 1.2631382e-12, 7.4857256e-18, 9.9999905e-01, 3.6862950e-11, 8.8197254e-09]
+    #print(len(preds))
+    #print(preds[0]) # 1000 predictions... First one = 99.99% it's a "7"   [2.0517505e-12, 1.0282039e-12, 1.4764162e-10, 9.4572317e-07, 3.6487339e-13, 1.2631382e-12, 7.4857256e-18, 9.9999905e-01, 3.6862950e-11, 8.8197254e-09]
 
     result[teacher_id] = preds
 
