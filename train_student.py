@@ -66,9 +66,6 @@ def ensemble_preds(dataset, nb_teachers, stdnt_data):
   # Create array that will hold result
   result = np.zeros(result_shape, dtype=np.float32)
 
-  print(stdnt_data.shape)
-  print(result.shape)
-
   # HERE INSTEAD OF QUERYING EACH TEACHER TO DO SOFTMAX PREDS, WE SHOULD JUST READ THE "FILE" CONTAINING THE PREDICTIONS FOR EACH TEACHERS
 
   # Get predictions from each teacher
@@ -79,9 +76,6 @@ def ensemble_preds(dataset, nb_teachers, stdnt_data):
 
     # This can take a while when there are a lot of teachers so output status
     print("Computed Teacher " + str(teacher_id) + " softmax predictions")
-
-    #print(len(preds))
-    #print(preds[0]) # 1000 predictions... First one = 99.99% it's a "7"   [2.0517505e-12, 1.0282039e-12, 1.4764162e-10, 9.4572317e-07, 3.6487339e-13, 1.2631382e-12, 7.4857256e-18, 9.9999905e-01, 3.6862950e-11, 8.8197254e-09]
 
     result[teacher_id] = preds
 
