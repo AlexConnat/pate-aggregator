@@ -42,7 +42,7 @@ while (teacher_id+1 <= NB_TEACHERS): # Loop until all NB_TEACHERS predictions ar
 
 		teacher_id += 1
 
-		print("==== Received " + len(teachers_received) + "/" + str(NB_TEACHERS) + " Teacher Predictions ====\n")
+		print("==== Received " + str(len(teachers_received)) + "/" + str(NB_TEACHERS) + " Teacher Predictions ====\n")
 
 
 	else:
@@ -50,7 +50,7 @@ while (teacher_id+1 <= NB_TEACHERS): # Loop until all NB_TEACHERS predictions ar
 		print("Already received data from Teacher @ " + str(addr) + "\n")
 
 
-print("==== Received " + len(teachers_received) + "/" + str(NB_TEACHERS) + " Teacher Predictions ====\n")
+print("==== Received " + str(len(teachers_received)) + "/" + str(NB_TEACHERS) + " Teacher Predictions ====\n")
 
 print("[*] Start the aggregator\n")
 
