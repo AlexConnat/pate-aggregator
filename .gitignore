@@ -1,2 +1,4 @@
 *.DS_Store
 *.pyc
+
+script_train_student.sh
