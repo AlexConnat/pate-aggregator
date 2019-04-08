@@ -1,11 +1,16 @@
 #!/usr/bin/python2
 
 import socket
+import sys
+
+if len(sys.argv) != 4:
+    print("Usage: %s server_ip server_port nb_teachers" % (sys.argv[0])) # MUST BE A VALID IP AND VALID PORT
+    exit(1)
 
 CHUNK_SIZE = 8 * 1024
-NB_TEACHERS = 3
-SERVER_IP = "10.10.55.100"
-SERVER_PORT = 1337
+NB_TEACHERS = int(sys.argv[3])
+SERVER_IP = sys.argv[1]          # "10.10.55.100"
+SERVER_PORT = int(sys.argv[2])   # 1337
 MAX_NB_CONNECTIONS = 10
 
 teacher_id = 0
